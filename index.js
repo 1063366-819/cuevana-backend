@@ -17,7 +17,7 @@ async function principal(){
 }
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://enchanting-khapse-36998b.netlify.app/',
 }))
 
 app.get('/', (req, res) => {
