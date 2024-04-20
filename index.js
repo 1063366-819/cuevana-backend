@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors')
+require('dotenv').config();
 app.use(express.json());
 
 const database = require('./databases/database');
@@ -11,13 +12,12 @@ const generoR = require('./routes/generoR');
 const producerR = require('./routes/producerR');
 
 async function principal(){ 
-    await app.listen(12330);
-    console.log("Express conectado en el puerto 12330");
+    await app.listen(process.env.PORT);
+    console.log(`Express conectado en el puerto ${process.env.PORT}`);
 }
 
 app.use(cors({
     origin: 'http://localhost:5173',
-
 }))
 
 app.get('/', (req, res) => {
