@@ -16,12 +16,12 @@ async function principal(){
     console.log(`Express conectado en el puerto ${process.env.PORT}`);
 }
 
-app.use(cors({
-    origin: 'https://enchanting-khapse-36998b.netlify.app/',
-}))
+app.use(cors(
+    origin = 'https://enchanting-khapse-36998b.netlify.app',
+))
 
 app.get('/', (req, res) => {
-    res.send("Express conectado en el puerto 12330");
+    res.send("Express conectado en el puerto 12330 cuidadosamente");
 });
 
 app.use('/tipo', tipoR);
